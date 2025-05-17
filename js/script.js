@@ -12,3 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+let menuBtn = document.querySelectorAll('.menu-btn');
+let menuList = document.querySelectorAll('.navbar__menu');
+
+menuBtn.forEach(menu => (
+  menu.addEventListener('click', ()=> {
+    menuList.forEach(list => (
+      list.classList.toggle('active')
+    ))
+    menu.classList.toggle('active');
+  })
+))

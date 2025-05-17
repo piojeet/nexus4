@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 @font-face {
     font-family: 'Poppins-Regular';
     src: url('../fonts/Poppins-Regular.ttf') format('opentype');
@@ -78,6 +83,10 @@
     font-weight: 500;
 }
 
+.menu-btn {
+    display: none;
+}
+
 .same-btn svg {
     display: block;
 }
@@ -96,6 +105,10 @@
     display: flex;
     align-items: center;
     column-gap: 20px;
+}
+
+.navbar__auth-mob {
+    display: none;
 }
 
 .hero-content {
@@ -302,13 +315,17 @@
 
 .form-section,
 .interview-session,
-.feedback-section {
+.feedback-section-h {
     margin-top: 24px;
     padding: 8px;
     box-shadow: 0 3px 10px #08215227;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+.feedback-section-h {
+    padding: 16px;
 }
 
 .form-title {
@@ -327,7 +344,7 @@
     line-height: normal;
 }
 
-.form-fields {
+.form-fields-h {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -388,7 +405,7 @@
     width: 100%;
 }
 
-.checkbox-label {
+.checkbox-label-h {
     font-size: 7px;
     font-family: var(--poppins-medium);
     font-weight: 500;
@@ -416,9 +433,10 @@
     height: 5px;
     background: var(--btn-border-color);
     align-content: center;
+    border-radius: 50%;
 }
 
-.form-fields .start-button {
+.form-fields-h .start-button {
     font-family: var(--poppins-medium);
     font-size: 8px;
     padding: 5px 10px;
@@ -730,6 +748,7 @@
     font-family: var(--poppins-medium);
     font-weight: 500;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 .pricing-header {
@@ -1174,6 +1193,8 @@ footer {
     display: flex;
     justify-content: space-between;
     margin: 16px 0;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .interview-time-item {
@@ -1210,6 +1231,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .interview-actions a {
@@ -1322,6 +1344,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    border-radius: 24px;
 }
 
 .form-group {
@@ -1453,6 +1476,7 @@ footer {
     position: relative;
     cursor: pointer;
     transition: all .2s linear;
+    flex-shrink: 0;
 }
 
 .checkbox-label input {
@@ -1693,6 +1717,10 @@ footer {
     line-height: normal;
 }
 
+.question-review-id {
+    white-space: nowrap;
+}
+
 .question-review-text {
     font-family: var(--poppins-medium);
     font-weight: 500;
@@ -1841,6 +1869,7 @@ footer {
     font-family: var(--poppins-regular);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    gap: 20px;
 }
 
 .interview-transactions-list {
@@ -1853,7 +1882,24 @@ footer {
 .interview-transaction-item {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    /* white-space: nowrap; */
 }
+
+.interview-transactions-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    display: block;
+}
+
+.interview-transactions-box {
+    display: table;
+    width: auto;
+    min-width: 540px;
+}
+
+
+
 
 .interview-transaction-name {
     display: flex;
@@ -1877,6 +1923,7 @@ footer {
     padding: 5px 14px;
     border-radius: 40px;
     width: fit-content;
+    height: fit-content;
 }
 
 .status-paid {
@@ -1900,6 +1947,454 @@ footer {
     gap: 6px;
 }
 
+.footer-socials-mob {
+    display: none;
+}
+
 .interview-transaction-actions span {
     cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .navbar {
+        padding: 0 40px;
+    }
+
+    .hero-content {
+        padding: 100px 40px;
+    }
+
+    .footer-container {
+        padding: 0 40px;
+    }
+
+    .hero-title {
+        font-size: 80px;
+    }
+
+    .container {
+        padding: 80px 40px;
+    }
+
+    .steps-wrapper {
+        gap: 20px;
+    }
+
+    .features-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 60px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .same-h2 {
+        font-size: 45px;
+    }
+
+    .interview-title {
+        font-size: 35px !important;
+    }
+
+    .interview-history-main {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .steps-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 70px;
+    }
+
+    .navbar__auth-desk {
+        display: none;
+    }
+
+    .navbar__auth-mob {
+        display: flex;
+    }
+
+    .navbar__menu {
+        position: fixed;
+        width: 100%;
+        background: var(--primary-white);
+        height: fit-content;
+        z-index: 1000;
+        left: 0;
+        top: 70px;
+        padding: 50px 0;
+        transform: scaleY(0);
+        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform-origin: top;
+    }
+
+    .navbar__menu.active {
+        transform: scaleY(1);
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar__links {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .navbar__auth-mob {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu-close {
+        display: none;
+    }
+
+    .menu-btn.active .menu-close {
+        display: block;
+    }
+
+    .menu-btn.active .menu-open {
+        display: none;
+    }
+
+    .interview-container {
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .form-row-flex {
+        gap: 10px;
+    }
+
+    .form-content,
+    .form-fields {
+        padding: 20px;
+    }
+
+    .form-group .form-input,
+    .form-select {
+        font-size: 18px;
+    }
+
+    .interview-transactions-box {
+    width: auto;
+    min-width: 650px;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .hero-title {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    .same-h2 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+    .interview-title {
+        font-size: 30px !important;
+    }
+
+    .pricing-header {
+        font-size: 23px;
+    }
+
+    .pricing-desc,
+    .pricing-popular {
+        font-size: 16px;
+    }
+
+    .pricing-rate-num {
+        font-size: 50px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-title {
+        font-size: 20px;
+    }
+
+    .form-row-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-group .form-input,
+    .form-select {
+        font-size: 16px;
+        padding: 14px 15px;
+        height: 50px;
+    }
+
+    .form-checkbox-group .checkbox-text {
+        font-size: 16px;
+    }
+
+    .form-group .form-label {
+        font-size: 18px;
+    }
+
+    .upload-text,
+    .resume-text {
+        text-align: center;
+    }
+
+    .form-fields {
+        gap: 30px;
+    }
+
+    .form-textarea {
+        font-size: 16px;
+        padding: 14px 15px;
+    }
+
+    .score-metrics-container {
+        grid-template-columns: 1fr;
+    }
+
+    .interview-history-main {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        line-height: 61px;
+    }
+
+    .hero-content {
+        padding: 100px 20px;
+    }
+
+    .container {
+        padding: 70px 20px;
+    }
+
+    .features-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .feature-item h3 {
+        font-size: 22px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-container {
+        padding: 0 20px;
+    }
+
+    .footer-socials-desk {
+        display: none;
+    }
+
+    .footer-socials-mob {
+        display: flex;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .footer-top {
+        padding: 50px 0;
+    }
+
+    .faq-question,
+    .faq-answer p {
+        font-size: 18px;
+    }
+
+    .same-btn {
+        font-size: 14px;
+    }
+
+    .same-btn {
+        padding: 12px 18px;
+    }
+
+    .hero-badge {
+        font-size: 14px;
+    }
+
+    .pricing-item span {
+        font-size: 16px;
+    }
+
+    .feature-item p {
+        font-size: 16px;
+    }
+
+    .testimonial-text {
+        font-size: 18px;
+    }
+
+    .user-info .user-name {
+        font-size: 18px;
+    }
+
+    .user-info .user-handle {
+        font-size: 14px;
+    }
+
+    .testimonial-icon img {
+        width: 50px;
+    }
+
+    .interview-name {
+        font-size: 18px;
+    }
+
+    .upload-text,
+    .resume-text {
+        font-size: 20px;
+    }
+
+    .upload-icon,
+    .resume-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .user-profile-image {
+        width: 35px;
+        height: 35px;
+        padding: 7px;
+    }
+
+    .user-profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .user-profile-name {
+        font-size: 14px;
+    }
+
+    .user-profile-role {
+        font-size: 10px;
+    }
+
+    .user-profile {
+        gap: 5px;
+    }
+
+    .interview-history .interview-title {
+        text-align: center !important;
+    }
+
+    .question-review-id,
+    .question-review-answer-label {
+        font-size: 16px;
+    }
+
+    .question-review-block,
+    .question-review-entry {
+        padding: 15px;
+    }
+
+    .question-review-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .question-review-entry {
+        gap: 30px;
+    }
+
+    .question-review-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .question-review-heading {
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .interview-scoreboard-panel {
+        padding: 15px;
+    }
+
+    .interview-container-box {
+        grid-template-columns: 1fr;
+    }
+
+    .user-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .question-label-right {
+        font-size: 20px;
+    }
+
+    .question-text-right {
+        font-size: 14px;
+    }
+
+    .question-list-wrapper {
+        padding: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    .interview-details {
+        flex-direction: column;
+    }
+
+    .navbar__logo img,
+    .footer-logo img {
+        width: 150px;
+    }
+
+    .interview-header-container {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
 }
