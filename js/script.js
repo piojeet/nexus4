@@ -17,11 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
 let menuBtn = document.querySelectorAll('.menu-btn');
 let menuList = document.querySelectorAll('.navbar__menu');
 
-menuBtn.forEach(menu => (
-  menu.addEventListener('click', ()=> {
-    menuList.forEach(list => (
-      list.classList.toggle('active')
-    ))
+menuBtn.forEach(menu => {
+  menu.addEventListener('click', () => {
+    menuList.forEach(list => {
+      list.classList.toggle('active');
+    });
     menu.classList.toggle('active');
-  })
-))
+
+    let anyActive = Array.from(menuList).some(list => list.classList.contains('active'));
+    document.body.style.overflow = anyActive ? 'hidden' : 'auto';
+  });
+});
