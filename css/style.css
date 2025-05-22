@@ -1195,8 +1195,8 @@ footer {
 
 .interview-name {
     font-size: 24px;
-    font-family: var(--poppins-semiBold);
-    font-weight: 600;
+    font-family: var(--poppins-medium);
+    font-weight: 500;
 }
 
 .interview-details {
