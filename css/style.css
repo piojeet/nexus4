@@ -1792,13 +1792,15 @@ footer {
     position: relative;
 }
 
-.metric-name {
+.metric-name,
+.overall-score-label {
     font-family: var(--poppins-medium);
     color: var(--gray-color);
     font-weight: 500;
 }
 
-.metric-percent {
+.metric-percent,
+.overall-score-number {
     font-size: 14px;
     font-family: var(--poppins-medium);
     font-weight: 500;
