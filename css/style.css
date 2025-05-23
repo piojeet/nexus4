@@ -1111,8 +1111,8 @@ footer {
 
 .interview-title {
     font-size: 35px;
-    font-family: var(--poppins-semiBold);
-    font-weight: 600;
+    font-family: var(--poppins-medium);
+    font-weight: 500;
     color: var(--primary-dark-black);
     margin-bottom: 24px;
 }
